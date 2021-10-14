@@ -1,0 +1,42 @@
+<script>
+
+function findDuplicate(str, N)
+{
+        int first = 0;
+    int second = 0;
+    for (int i = 0; i < N; i++)
+    {
+
+  if ((first & (1 << (str.charAt(i) - 'a'))) != 0)
+      {
+      
+  second
+          = second | (1 << (str.charAt(i) - 'a'));
+      }
+      else
+      {
+      
+           first
+          = first | (1 << (str.charAt(i) - 'a'));
+      }
+    }
+
+
+   if (((first & (1 << i))
+           & (second & (1 << i))) != 0) {
+ 
+        System.out.print((char)(i + 'a') + " ");
+      }
+    }
+  }
+  
+  static public void main(String args[])
+  {
+    String str = "geeksforgeeks";
+    int N = str.length();
+ 
+    findDuplicate(str, N);
+  }
+}
+
+</script>
